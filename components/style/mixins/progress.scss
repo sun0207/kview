@@ -1,0 +1,29 @@
+
+
+@mixin progressWrap(){
+    position: relative;
+    display: block;
+    width: $width-base;
+    height: $width-base;
+    border-radius: 4px;
+    background-color: $border-color-split;
+    margin: $slider-margin;
+}
+
+@mixin progress() {
+    display: flex;
+    height: $width-base;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: $font-size-base;
+    color: $white;
+    background-color: $primary-color;
+    white-space: nowrap;
+    transition: width .5s linear;
+    &-text{
+        margin: 0 $margin-sm;
+    }
+    &-success{
+        background-color: $success-color;
+    }
+}

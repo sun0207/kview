@@ -1,0 +1,13 @@
+@mixin flex($direction:row, $justify:flex-start, $align:center, $wrap:wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+@mixin border($position: bottom, $width: 1px, $style: solid, $color: #dcdee2) {
+    border-#{$position}: $width $style $color;   
+}
+.border{
+    border: $border-width-base $border-style-base $border-color-base;   
+}

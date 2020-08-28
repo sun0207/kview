@@ -1,0 +1,43 @@
+@use "sass:color";
+/*
+*颜色加深
+*/
+@function colorDarken($colorTarget,$index){
+    @return darken($colorTarget,$index);
+}
+/*
+* 颜色高亮
+*/
+@function colorLighten($colorTarget,$index){
+    @return lighten($colorTarget,$index);
+}
+/*
+*颜色透明度
+*/
+@function colorOpacity($colorTarget){
+    @return opacity($colorTarget);
+}
+/*
+* 颜色深浅
+*/
+@function colorFade($colorTarget,$index){
+    @return fade($colorTarget,$index);
+}
+/*
+* 缩放颜色属性
+*/
+@function colorScale($colorTarget,$index){
+    @return scale($colorTarget,$index);
+}
+/*
+* 增加饱和度
+*/
+@function colorSaturate($colorTarget,$index){
+    @return saturate($colorTarget,$index);
+}
+/*
+* 降低饱和度
+*/
+@function colorDesaturate($colorTarget,$index){
+    @return desaturate($colorTarget,$index);
+}

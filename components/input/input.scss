@@ -1,0 +1,85 @@
+$input-prefix-cls: #{$css-prefix}input;
+
+.#{$input-prefix-cls}{
+    @include input;
+    &-wrapper{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        vertical-align: middle;
+        line-height: normal;
+        &-icon {
+            width: 32px;
+            height: $input-height-base;
+            line-height: $input-height-base;
+            font-size: 16px;
+            text-align: center;
+            color: $subsidiary-color;
+            position: absolute;
+            right: 0;
+            z-index: 3;
+        }
+        &-hide-icon &-icon{
+            display: none;
+        }
+        &-icon-validate{
+            display: none;
+        }
+    
+        &-icon-clear{
+            display: none;
+        }
+    
+        &-wrapper:hover{
+            .#{$input-prefix-cls}-icon-clear{
+                display: inline-block;
+            }
+        }
+    }
+
+
+    // prefix & suffix
+    &-prefix, &-suffix{
+        display: flex;
+        width: 32px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        i{
+            font-size: 16px;
+            line-height: $input-height-base;
+            color: $subsidiary-color;
+        }
+    }
+    &-suffix{
+        left: auto;
+        right: 0;
+    }
+    &-wrapper-small &-prefix, &-wrapper-small &-suffix{
+        i{
+            font-size: 14px;
+            line-height: $input-height-small;
+        }
+    }
+    &-wrapper-large &-prefix, &-wrapper-large &-suffix{
+        i{
+            font-size: 18px;
+            line-height: $input-height-large;
+        }
+    }
+
+    &-with-prefix{
+        padding-left: 32px;
+    }
+    &-with-suffix{
+        padding-right: 32px;
+    }
+}
+
+.#{$input-prefix-cls}-group{
+    @include input-group($input-prefix-cls);
+}

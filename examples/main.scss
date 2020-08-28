@@ -1,0 +1,115 @@
+
+@import '@/style/index.scss';
+#app{
+    width: 100%;
+    padding-top: $layout-header-height;
+    height: 100vh;
+    overflow: hidden;
+}
+.nav-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    @include flex(row, space-around, center, no-wrap);
+    width: 100%;
+    height: $layout-header-height;
+    @include border();
+    & .logo-wrap{
+        width: 100px;
+        height: 42px;
+        img{
+            height: 100%;
+        }
+    };
+    & .search-wrap{
+        width: 200px;
+        height: 40px;
+    };
+    
+    & .nav-list-wrap{
+        @include flex();
+        font-size: $font-size-base;
+        color: $text-color;
+        & .nav-item{
+            padding:0 $padding-lg;
+            cursor: pointer;
+        }
+    }
+}
+.container-wrap{
+    @include flex(row, flex-start, flex-start, nowrap);
+    height: 100%;
+    & .navigate-wrap{
+        width: 20%;
+        height: 100%;
+        overflow-y: auto;
+        @include border(right);
+        padding: $padding-md;
+        .main-menu-list{
+            li{
+                @include flex(row,flex-start,center,nowrap);
+                font-size: $font-size-base;
+                color: $text-color;
+                cursor: pointer;
+                padding:$padding-sm;
+                & .kvu-icon{
+                    margin:$margin-xs;
+                }
+                &:hover{
+                    background-color: $background-color-base;
+                }
+                &.router-link-exact-active {
+                    @include border(right,2px,solid,$primary-color);
+                    color: colorDarken($primary-color,10%)
+                }
+            }
+        }
+    }
+    & .router-view-wrap{
+        width: 80%;
+        height: 100%;
+        overflow-y: auto;
+        padding: $padding-md;
+    }
+    & .container-title{
+        font-size: 26px;
+        font-weight: 400;
+        margin: $margin-lg $margin-lg $margin-xs 0;
+    }
+    & .container-desc{
+        font-size: $font-size-large;
+        margin: 0 $margin-sm $margin-sm 0;
+    }
+}
+.kviewicons-list{
+    @include flex(row, flex-start, flex-start, wrap);
+    & .kviewicons-item{
+        @include flex(column, center, center, wrap);
+        width: 16.66666667%;
+        cursor: pointer;
+        transition: all 1s;
+        .kvu-icon{
+            transition: all .5s;
+        }
+        .icon-name{
+            font-size: $font-size-base;
+            color: $text-color;
+            transition: all .5s;
+        }
+        &:hover{
+            background-color: $primary-color;
+            .kvu-icon{
+                font-size: 28px;
+                color: $white;
+            }
+            .icon-name{
+                color: $white;
+            }
+        }
+        padding: $padding-md;
+    }
+}
+.kviewbutton-list{
+    font-size: $font-size-base;
+}

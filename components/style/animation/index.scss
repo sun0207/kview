@@ -1,0 +1,16 @@
+.kvu-load-loop {
+    animation: ani-kvu-rotate 1s linear infinite;
+}
+
+@keyframes ani-kvu-rotate {
+    from { transform: rotate(0deg);}
+    50%  { transform: rotate(180deg);}
+    to   { transform: rotate(360deg);}
+}
+
+
+@keyframes ani-kvu-opacity{
+    form{display:none;opacity: 0;}
+    50%{opacity: 0.5;}
+    to{display: block;opacity: 1;}
+}

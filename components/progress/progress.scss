@@ -1,0 +1,11 @@
+$progress-prefix-cls : #{$css-prefix}progress;
+
+.#{$progress-prefix-cls}{
+    &-wrap{
+        @include progressWrap;
+    }
+
+    &-bg{
+        @include progress;
+    }
+}

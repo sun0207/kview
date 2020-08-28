@@ -1,0 +1,41 @@
+$slider-prefix-cls : #{$css-prefix}slider;
+
+.#{$slider-prefix-cls}{
+    &-wrap{
+        @include sliderWrap;
+    }
+
+    &-bar{
+        @include sliderBar;
+    }
+
+    &-button{
+        @include sliderButton($primary-color,$slider-prefix-cls);
+    }
+
+    
+}
+
+.#{$slider-prefix-cls}-disabled{
+    .#{$slider-prefix-cls}-wrap{
+        background-color: $slider-disabled-color;
+        cursor: $cursor-disabled;
+    }
+
+    .#{$slider-prefix-cls}-bar{
+        background-color: $slider-disabled-color !important;
+        cursor: $cursor-disabled;
+    }
+
+    .#{$slider-prefix-cls}-button{
+        &-drag{
+            border-color: $slider-disabled-color !important;
+            cursor: $cursor-disabled;
+        }
+        &:hover{
+            .#{$slider-prefix-cls}-button-tooltip{
+                display: none;
+            }
+        }
+    }
+}
